@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Landing Page</title>
+
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ===== HEADER / NAVBAR ===== -->
+    <header id="nav-menu" aria-label="Navigation Bar">
+      <div class="container">
+        <!-- ========== LEFT SECTION ========== -->
+        <div class="nav-start">
+          <!-- LOGO -->
+          <a href="/" class="logo">
+            <i class="bx bxs-component"></i> Brand<span>Logo</span>
+          </a>
+
+          <!-- NAV MENU -->
+          <nav class="menu" aria-label="Main Menu">
+            <ul class="menu-bar">
+              <!-- ========== BROWSE DROPDOWN ========== -->
+              <li class="menu-item">
+                <button
+                  class="nav-link dropdown-btn"
+                  data-dropdown="dropdown1"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Browse
+                  <i class="bx bx-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div id="dropdown1" class="dropdown">
+                  <ul role="menu">
+                    <li role="menuitem">
+                      <a class="dropdown-link" href="#best-of-the-day">
+                        <img src="./assets/icons/botd.svg" alt="botd" class="icon" />
+                        <div>
+                          <span class="dropdown-link-title">Best of the Day</span>
+                          <p>Shorts featured today by curators</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a class="dropdown-link" href="#featured-streams">
+                        <img src="./assets/icons/fs.svg" alt="fs" class="icon" />
+                        <div>
+                          <span class="dropdown-link-title">Featured Streams</span>
+                          <p>Leading creatives livestreams</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a class="dropdown-link" href="#subscriptions">
+                        <img src="./assets/icons/sp.svg" alt="sp" class="icon" />
+                        <div>
+                          <span class="dropdown-link-title">Subscriptions</span>
+                          <p>Gain exclusive access</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a class="dropdown-link" href="#creative-feed">
+                        <img src="./assets/icons/cf.svg" alt="cf" class="icon" />
+                        <div>
+                          <span class="dropdown-link-title">Creative Feed</span>
+                          <p>See trending creations</p>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <hr />
+
+                  <ul role="menu">
+                    <li class="dropdown-title">
+                      <span class="dropdown-link-title">Browse by Apps</span>
+                    </li>
+                    <li role="menuitem">
+                      <a class="dropdown-link" href="#adobe-xd">
+                        <img src="./assets/icons/xd.svg" alt="xd" /> Adobe XD
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a class="dropdown-link" href="#after-effect">
+                        <img src="./assets/icons/ae.svg" alt="ae" /> After Effects
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a class="dropdown-link" href="#sketch">
+                        <img src="./assets/icons/sketch.svg" alt="sketch" /> Sketch
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a class="dropdown-link" href="#indesign">
+                        <img src="./assets/icons/indesign.svg" alt="indesign" /> InDesign
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a class="dropdown-link" href="#figma">
+                        <img src="./assets/icons/figma.svg" alt="figma" /> Figma
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <!-- ========== DISCOVER DROPDOWN ========== -->
+              <li class="menu-item">
+                <button
+                  class="nav-link dropdown-btn"
+                  data-dropdown="dropdown2"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Discover
+                  <i class="bx bx-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div id="dropdown2" class="dropdown">
+                  <ul role="menu">
+                    <li>
+                      <span class="dropdown-link-title">Browse Categories</span>
+                    </li>
+                    <li role="menuitem">
+                      <a class="dropdown-link" href="#branding">Branding</a>
+                    </li>
+                    <li role="menuitem">
+                      <a class="dropdown-link" href="#illustrations">Illustration</a>
+                    </li>
+                  </ul>
+                  <hr />
+                  <ul role="menu">
+                    <li>
+                      <span class="dropdown-link-title">Download App</span>
+                    </li>
+                    <li role="menuitem">
+                      <a class="dropdown-link" href="#mac-windows">MacOS & Windows</a>
+                    </li>
+                    <li role="menuitem">
+                      <a class="dropdown-link" href="#linux">Linux</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <!-- ========== SIMPLE LINKS ========== -->
+              <li><a class="nav-link" href="#jobs">Jobs</a></li>
+              <li><a class="nav-link" href="#faqs">FAQs</a></li>
+              <li><a class="nav-link" href="#about">About</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- ========== RIGHT SECTION ========== -->
+        <div class="nav-end">
+          <div class="right-container">
+            <form class="search" role="search">
+              <input type="search" name="search" placeholder="Search..." />
+              <i class="bx bx-search" aria-hidden="true"></i>
+            </form>
+            <button class="btn btn-primary">Search</button>
+          </div>
+
+          <!-- HAMBURGER ICON -->
+          <button
+            id="hamburger"
+            aria-label="Open Menu"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <i class="bx bx-menu" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========== JS FILE ========== -->
+    <script src="script.js"></script>
+  </body>
+</html>
