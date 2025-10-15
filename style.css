@@ -34,15 +34,14 @@ header {
 
 /* ========== LOGO ========== */
 .logo {
-  margin: 12px;
-  padding: 6px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 1.3rem;
   font-weight: 600;
   color: #2c3e50;
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 6px;
 }
 
 .logo i {
@@ -60,6 +59,7 @@ header {
   align-items: center;
   list-style: none;
   gap: 1.8rem;
+  transition: all 0.3s ease;
 }
 
 .menu-item {
@@ -89,13 +89,13 @@ header {
 /* ========== DROPDOWN ========== */
 .dropdown {
   position: absolute;
-  top: 110%;
+  top: 120%;
   left: 0;
-  min-width: 220px;
+  min-width: 250px;
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  padding: 0.75rem 0;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 0;
   opacity: 0;
   pointer-events: none;
   transform: translateY(10px);
@@ -113,39 +113,58 @@ header {
   list-style: none;
 }
 
+.dropdown-title {
+  padding: 0.75rem 1.2rem;
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 .dropdown-link {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 0.75rem 1.2rem;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 0.8rem 1.2rem;
   text-decoration: none;
   color: #333;
   font-size: 0.9rem;
-  transition: background 0.3s ease;
+  line-height: 1.3;
+  transition: background 0.3s ease, color 0.3s ease;
+  border-radius: 6px;
 }
 
 .dropdown-link:hover {
   background: #f3f4f6;
+  color: #007bff;
 }
 
 .dropdown-link img.icon {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.dropdown-link div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .dropdown-link div p {
-  font-size: 0.8rem;
-  color: #666;
+  font-size: 0.78rem;
+  color: #777;
 }
 
 .dropdown hr {
   border: none;
   height: 1px;
   background-color: #eee;
-  margin: 0.5rem 0;
+  margin: 0.6rem 0;
 }
 
-/* ========== SEARCH BAR ========== */
+/* ========== SEARCH BAR & BUTTONS ========== */
 .right-container {
   display: flex;
   align-items: center;
@@ -178,7 +197,6 @@ header {
   font-size: 1.1rem;
 }
 
-/* ========== BUTTONS ========== */
 .btn {
   border: none;
   cursor: pointer;
@@ -200,11 +218,16 @@ header {
 /* ========== HAMBURGER ========== */
 #hamburger {
   display: none;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   background: none;
   border: none;
   cursor: pointer;
   color: #333;
+  transition: color 0.3s ease;
+}
+
+#hamburger:hover {
+  color: #007bff;
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
@@ -212,12 +235,33 @@ header {
   .menu-bar {
     gap: 1.2rem;
   }
+
+  .search input {
+    width: 150px;
+  }
 }
 
+/* ========== MOBILE VIEW ========== */
 @media (max-width: 768px) {
+  .container {
+    justify-content: space-between;
+  }
+
+  .right-container {
+    display: none; /* clean mobile header */
+  }
+
+  /* Hamburger visible */
+  #hamburger {
+    display: block;
+    order: 3;
+    margin-left: auto;
+  }
+
+  /* Mobile menu */
   .menu-bar {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 70px;
     left: 0;
     flex-direction: column;
     background: #fff;
@@ -226,7 +270,7 @@ header {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-20px);
+    transform: translateY(-10px);
     transition: all 0.3s ease;
   }
 
@@ -236,35 +280,57 @@ header {
     transform: translateY(0);
   }
 
-  #hamburger {
+  .menu-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-link {
+    padding: 0.8rem 0;
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
+  }
+
+  /* Dropdown inside mobile menu */
+  .dropdown {
+    position: static;
+    box-shadow: none;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    display: none;
+    border-top: 1px solid #eee;
+  }
+
+  .dropdown.active {
     display: block;
   }
 
-  .nav-end {
-    gap: 0.5rem;
+  .dropdown-link {
+    justify-content: center;
   }
 
-  .search input {
-    width: 140px;
+  .dropdown-link div {
+    align-items: center;
   }
 }
 
 /* ========== SMALL DEVICES ========== */
 @media (max-width: 480px) {
   .container {
-    flex-wrap: wrap;
-  }
-
-  .search input {
-    display: none;
-  }
-
-  .btn-primary {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
+    padding: 0.8rem 1rem;
   }
 
   .logo {
     font-size: 1.1rem;
+  }
+
+  #hamburger {
+    font-size: 1.9rem;
+  }
+
+  .menu-bar {
+    top: 64px;
   }
 }
